@@ -7,22 +7,22 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = "27758016"
-API_HASH = "8d34cfffe27ab461eabbf0091b1a27df"
+API_ID = int(getenv("API_ID", "25638120"))
+API_HASH = getenv("API_HASH")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = "7940603237:AAHtpB-l7SqaG6Rm7tDhQpCM5UO4e52cGpk"
+BOT_TOKEN = getenv("BOT_TOKEN")
 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = "mongodb+srv://tennyson2002:tennyson2002@cluster0.h1vm3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 6000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002251188406"))
+LOGGER_ID = int(getenv("LOGGER_ID", ""))
 
 # Get this value from @FallenxBot on Telegram by /id
-OWNER_ID = 7224419362
+OWNER_ID = int(getenv("OWNER_ID", "5050578106"))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -32,15 +32,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/Marwin2002/JioSaavn",
+    "https://github.com/jiosaavnmusic/JioSaavn",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/The_Architect04")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Team_Supporty")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://www.jiosaavn.com/")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://www.jiosaavn.com/")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -52,7 +52,7 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
 
 
 # Maximum limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "700"))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "50"))
 
 
 # Telegram audio and video file size limit (in bytes)
@@ -62,7 +62,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
 
 
 # Get your pyrogram v2 session from @StringFatherBot on Telegram
-STRING1 = "BQC86fAAbIP1EZaDdUQ_RTicHQSKFFzB24l7LTglDMDYXjwra-2D4coplxBze3usVS4OUM_P-q1buYgEhC5cJtxuV07jMHeMoA7rmtbmGWjufPkcRG-l4zuiWXCy2AET-M1BtljXVCFHhVGXmFIQLHAIoOqe8fPyVhmBoE-5Gao-kWCzJsua8ExyApduC4sEOazoc7h2udbFMZY_CtesqNVZpIEMC3MU4c08oJonQfOHfGZcv2kBUIgHyPZh42vpSTQ4l6jpkYlV5Vch1v5QrI1UoFq8AdYmHV9JaodslwgkF5nTUG2NY4EE_44E2d7i7FswoTeKO6_DCLn5lKnEYiU_Ep7QqgAAAAHoTI4-AA"
+STRING1 = getenv("STRING_SESSION", None)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -78,13 +78,13 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://envs.sh/rEw.jpg"
+    "START_IMG_URL", "https://envs.sh/CwU.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://envs.sh/r2A.jpg"
+    "PING_IMG_URL", "https://envs.sh/CLg.jpeg"
 )
-PLAYLIST_IMG_URL = "https://envs.sh/rw8.jpg"
-STATS_IMG_URL = "https://envs.sh/r2j.jpg"
+PLAYLIST_IMG_URL = "https://envs.sh/CwU.jpg"
+STATS_IMG_URL = "https://envs.sh/CLg.jpeg"
 TELEGRAM_AUDIO_URL = "https://envs.sh/CLg.jpeg"
 TELEGRAM_VIDEO_URL = "https://envs.sh/CLg.jpeg"
 STREAM_IMG_URL = "https://envs.sh/CLg.jpeg"
@@ -113,4 +113,4 @@ if SUPPORT_CHAT:
     if not re.match("(?:http|https)://", SUPPORT_CHAT):
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-)
+        )
