@@ -1,6 +1,6 @@
 {
 
-    "name": "Aviax Music",
+    "name": "Goku Music",
 
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
 
@@ -114,7 +114,27 @@
 
         "required": true
 
-      }
+      },
+
+      "SUPPORT_CHAT": {
+
+        "description": "Add you group link.",
+
+        "value": "",
+
+        "required": true
+
+      },
+
+     "SUPPORT_CHANNEL": {
+
+       "description": "Add you channel link",
+
+       "value": "",
+
+       "required": true
+
+     }
 
     },
 
